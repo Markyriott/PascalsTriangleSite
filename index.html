@@ -4,15 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pascal's Triangle | CIS2210</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <main>
-        <div class="display">
-            
-        </div>
+    <main class="container">
+        <div id="fibonacci-container"></div>
+        <div id="triangle-container"></div>
         <div class="controls">
-
+            <h3>Pascal's Triangle Viewer</h3>
+            
+            <div class="size-control">
+                <label for="row-range">Number of rows (1-10):</label>
+                <input type="number" id="row-range" min="1" max="10" value="5">
+                <button onClick="createTriangle()">Update</button>
+            </div>
+            <p class="description" id="description">Default mode: Displays the Pascal Triangle. Each middle node is the sum of the two numbers above it.</p>
+            <div class="mode-controls">
+                <button class="mode-button active" id="default" onclick="setMode('default')">Default</button>
+                <button class="mode-button" id="fibonacci" onclick="setMode('fibonacci')">Fibonacci</button>
+                <button class="mode-button" id="powers" onclick="setMode('powers')">Powers of 2</button>
+                <button class="mode-button" id="sierpinski" onclick="setMode('sierpinski')">Sierpinski's Triangle</button>
+                <button class="mode-button" id="binomial" onclick="setMode('binomial')">Binomial Coefficients</button>
+            </div>
         </div>
     </main>
+    <script src="./script.js"></script>
 </body>
 </html>
